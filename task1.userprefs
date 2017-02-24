@@ -1,0 +1,16 @@
+﻿<Properties StartupConfiguration="{DE3EE359-03A0-4119-8A69-30944D40949F}|Default">
+  <MonoDevelop.Ide.ItemProperties.task1 PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="CalcUI.cs">
+    <Files>
+      <File FileName="CalcUI.cs" Line="39" Column="6" />
+      <File FileName="CalcCore.cs" Line="68" Column="3" />
+      <File FileName="Calculator.cs" Line="65" Column="6" />
+      <File FileName="Program.cs" Line="11" Column="14" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

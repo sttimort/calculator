@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-namespace task1
+namespace Calculator
 {
 	class MainClass
 	{

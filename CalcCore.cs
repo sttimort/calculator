@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace task1
+namespace Calculator
 {
 	struct Entry
 	{

@@ -1,5 +1,5 @@
 ﻿using System;
-namespace task1
+namespace Calculator
 {
 	static class CalcUI
 	{

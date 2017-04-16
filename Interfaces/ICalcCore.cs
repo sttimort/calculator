@@ -1,21 +1,22 @@
 ﻿using System;
 namespace Calculator
 {
-	struct HistoryEntry
+	public struct CalcHistoryEntry
 	{
-		public int id;
+		public int entryID;
 		public double value;
-
-		public HistoryEntry(int id, double value)
+		
+		public CalcHistoryEntry(int entryID, double value)
 		{
-			this.id = id;
+			this.entryID = entryID;
 			this.value = value;
 		}
 	}
 
 	interface ICalcCore
 	{
-		HistoryEntry lastEntry { get; }
+
+		CalcHistoryEntry lastEntry { get; }
 		void add(double operand);
 		void substract(double operand);
 		void mult(double operand);

@@ -5,43 +5,39 @@ namespace Calculator
 {
 	class CalcCore : ICalcCore
 	{
-		List<HistoryEntry> history;
-		public HistoryEntry lastEntry => history[history.Count - 1];
+		ICalcHistory _history;
+		public CalcHistoryEntry lastEntry => _history.Last;
 
 		public CalcCore(double firstValue)
 		{
-			history = new List<HistoryEntry>();
-			history.Add(new HistoryEntry(1, firstValue));
+			_history = new CalcHistory();
+			_history.Add(firstValue);
 		}
 
 		public void add(double operand)
 		{
-			history.Add(new HistoryEntry(history.Count + 1, lastEntry.value + operand));
+			_history.Add(lastEntry.value + operand);
 		}
 
 		public void substract(double operand)
 		{
-			history.Add(new HistoryEntry(history.Count + 1, lastEntry.value - operand));
+			_history.Add(lastEntry.value - operand);
 		}
 
 		public void mult(double operand)
 		{
-			history.Add(new HistoryEntry(history.Count + 1, lastEntry.value* operand));
+			_history.Add(lastEntry.value * operand);
 		}
 
 		public void div(double operand)
 		{
 			if (operand == 0) throw new ZeroDivisionError();
-			history.Add(new HistoryEntry(history.Count + 1, lastEntry.value / operand));
+			_history.Add(lastEntry.value / operand);
 		}
 
-		public void goToEntry(int entryId)
+		public void goToEntry(int entryID)
 		{
-			if (entryId > history.Count || entryId < 1)
-				throw new EntryIdError();
-
-			while (lastEntry.id != entryId)
-				history.RemoveAt(history.Count - 1);
+			_history.Add(_history.Get(entryID));
 		}
 	}
 }

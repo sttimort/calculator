@@ -1,7 +1,8 @@
 ﻿<Properties StartupConfiguration="{8D4693DE-1A75-4B7B-BA1C-6C860334D41F}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CalcUI.cs">
     <Files>
-      <File FileName="Program.cs" Line="15" Column="1" />
+      <File FileName="CalcUI.cs" Line="50" Column="3" />
+      <File FileName="Calculator.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.calculator PreferredExecutionTarget="MonoDevelop.Default" />

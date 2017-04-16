@@ -47,9 +47,9 @@ namespace Calculator
 			return result.Value;
 		}
 
-		public static void showEntry(HistoryEntry entry)
+		public static void showEntry(CalcHistoryEntry entry)
 		{
-			Console.WriteLine("[#{0}] = {1}", entry.id, entry.value);
+			Console.WriteLine("[#{0}] = {1}", entry.entryID, entry.value);
 		}
 	}
 }

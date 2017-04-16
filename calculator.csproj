@@ -40,6 +40,8 @@
     <Compile Include="Calculator.cs" />
     <Compile Include="Exceptions\Exceptions.cs" />
     <Compile Include="Interfaces\ICalcCore.cs" />
+    <Compile Include="CalcHistory.cs" />
+    <Compile Include="Interfaces\ICalcHistory.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

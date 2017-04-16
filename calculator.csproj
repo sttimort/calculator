@@ -35,18 +35,19 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CalcCore\CalcCore.cs" />
-    <Compile Include="CalcParser.cs" />
-    <Compile Include="CalcUI.cs" />
     <Compile Include="Calculator.cs" />
     <Compile Include="Exceptions\Exceptions.cs" />
     <Compile Include="Interfaces\ICalcCore.cs" />
-    <Compile Include="CalcHistory.cs" />
     <Compile Include="Interfaces\ICalcHistory.cs" />
-    <Compile Include="CalcHistoryEntry.cs" />
     <Compile Include="Enums\OpType.cs" />
+    <Compile Include="CalcCore\CalcHistory.cs" />
+    <Compile Include="CalcCore\CalcHistoryEntry.cs" />
+    <Compile Include="CalcUI\UI.cs" />
+    <Compile Include="CalcUI\CalcParser.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Enums\" />
+    <Folder Include="CalcUI\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

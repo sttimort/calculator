@@ -27,9 +27,13 @@ namespace Calculator
 					_cc.div(UI.operandPrompt());
 					break;
 				case OpType.GOTO:
-					if (!op.entryID.HasValue)
-						throw new Exception("EntryID in GOTO command is null for some reason");
-					_cc.goToEntry(op.entryID.Value);
+					_cc.goToEntry(int.Parse(op.rawArg)); // no need for TryParse beacause of regex
+					break;
+				case OpType.SAVE:
+					Console.WriteLine("save");
+					break;
+				case OpType.LOAD:
+					Console.WriteLine("load");
 					break;
 				default:
 					throw new ProgammShoudNotReachThisCodeError("_executeCommand switch default clause");

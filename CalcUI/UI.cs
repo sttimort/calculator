@@ -11,6 +11,8 @@ namespace Calculator.CalcUI
 			                  "\twhen first symbol on line is '@' — enter operation\n" +
 			                  "\t\toperation is one of '+', '-', '*', '/' or\n" +
 			                  "\t\t\t'#' followed by ordinal of one of previous results\n" +
+			                  "\t\t\t'r:<filename>' (without extension) to load data from wolfram file" +
+			                  "\t\t\t'w:<filename>' (without extension) to save data to wolfram file" +
 			                  "\t\t\t'q' to exit");
 		}
 

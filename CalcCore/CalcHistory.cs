@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Calculator.Interfaces;
+using Calculator.Enumumerations;
 
 namespace Calculator
 {
@@ -14,9 +15,10 @@ namespace Calculator
 
 
 		public CalcHistoryEntry Last => _entryList[_entryList.Count - 1];
-		public void Add(double value)
+
+		public void Add(OpType opType, double operand, double value)
 		{
-			_entryList.Add(new CalcHistoryEntry(_entryList.Count + 1, value));
+			_entryList.Add(new CalcHistoryEntry(_entryList.Count + 1, opType, operand, value));
 		}
 
 		public double Get(int entryID)

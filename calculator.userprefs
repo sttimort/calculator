@@ -1,5 +1,9 @@
 ﻿<Properties StartupConfiguration="{8D4693DE-1A75-4B7B-BA1C-6C860334D41F}|Default">
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="CalcCore/CalcCore.cs">
+    <Files>
+      <File FileName="CalcCore/CalcCore.cs" Line="13" Column="17" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.calculator PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

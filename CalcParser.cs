@@ -3,8 +3,6 @@ using System.Text.RegularExpressions;
 
 namespace Calculator
 {
-	enum OpType { ADD = 1, SUB, MULT, DIV, GOTO, QUIT }
-
 	struct Op
 	{
 		public OpType type;

@@ -1,4 +1,8 @@
 ﻿using System;
+using Calculator.Interfaces;
+using Calculator.Enumumerations;
+using Calculator.CalcUI;
+using Calculator.CalcCore;
 
 namespace Calculator
 {
@@ -11,16 +15,16 @@ namespace Calculator
 			switch (op.type)
 			{
 				case OpType.ADD:
-					_cc.add(CalcUI.operandPrompt());
+					_cc.add(UI.operandPrompt());
 					break;
 				case OpType.SUB:
-					_cc.substract(CalcUI.operandPrompt());
+					_cc.substract(UI.operandPrompt());
 					break;
 				case OpType.MULT:
-					_cc.mult(CalcUI.operandPrompt());
+					_cc.mult(UI.operandPrompt());
 					break;
 				case OpType.DIV:
-					_cc.div(CalcUI.operandPrompt());
+					_cc.div(UI.operandPrompt());
 					break;
 				case OpType.GOTO:
 					if (!op.entryID.HasValue)
@@ -34,13 +38,13 @@ namespace Calculator
 	
 		public void start()
 		{
-			CalcUI.printUsage();
+			UI.printUsage();
 
-			_cc = new CalcCore(CalcUI.operandPrompt());
-			CalcUI.showEntry(_cc.lastEntry);
+			_cc = new Core(UI.operandPrompt());
+			UI.showEntry(_cc.lastEntry);
 
 			Op op;
-			while ((op = CalcUI.opPrompt()).type != OpType.QUIT)
+			while ((op = UI.opPrompt()).type != OpType.QUIT)
 			{
 				try
 				{
@@ -51,7 +55,7 @@ namespace Calculator
 					Console.WriteLine(e.Message);
 				}
 				
-				CalcUI.showEntry(_cc.lastEntry);
+				UI.showEntry(_cc.lastEntry);
 			}
 		}
 	}

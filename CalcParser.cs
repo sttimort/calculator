@@ -1,9 +1,9 @@
-﻿using System;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
+using Calculator.Enumumerations;
 
-namespace Calculator
+namespace Calculator.CalcUI
 {
-	struct Op
+	public struct Op
 	{
 		public OpType type;
 		public int? entryID; // not null only when GOTO (#<EntryID>) command were entered

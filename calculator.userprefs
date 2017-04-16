@@ -1,10 +1,7 @@
 ﻿<Properties StartupConfiguration="{8D4693DE-1A75-4B7B-BA1C-6C860334D41F}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Enums/OpType.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Calculator.cs">
     <Files>
-      <File FileName="Interfaces/ICalcCore.cs" Line="5" Column="3" />
-      <File FileName="CalcHistoryEntry.cs" Line="7" Column="17" />
-      <File FileName="CalcParser.cs" Line="6" Column="2" />
-      <File FileName="Enums/OpType.cs" Line="3" Column="1" />
+      <File FileName="Calculator.cs" Line="40" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.calculator PreferredExecutionTarget="MonoDevelop.Default" />

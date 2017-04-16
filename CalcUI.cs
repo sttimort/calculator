@@ -1,7 +1,8 @@
 ﻿using System;
-namespace Calculator
+
+namespace Calculator.CalcUI
 {
-	static class CalcUI
+	public static class UI
 	{
 		public static void printUsage()
 		{

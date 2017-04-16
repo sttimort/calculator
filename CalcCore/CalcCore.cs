@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Calculator.Interfaces;
 
-namespace Calculator
+namespace Calculator.CalcCore
 {
-	class CalcCore : ICalcCore
+	class Core : ICalcCore
 	{
 		ICalcHistory _history;
 		public CalcHistoryEntry lastEntry => _history.Last;
 
-		public CalcCore(double firstValue)
+		public Core(double firstValue)
 		{
 			_history = new CalcHistory();
 			_history.Add(firstValue);

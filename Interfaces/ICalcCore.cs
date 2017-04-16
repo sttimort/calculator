@@ -1,5 +1,4 @@
-﻿using System;
-namespace Calculator
+﻿namespace Calculator.Interfaces
 {
 	interface ICalcCore
 	{

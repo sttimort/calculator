@@ -1,4 +1,4 @@
-﻿namespace Calculator
+﻿namespace Calculator.Interfaces
 {
 	public interface ICalcHistory
 	{

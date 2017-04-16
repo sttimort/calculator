@@ -1,4 +1,4 @@
-﻿namespace Calculator
+﻿namespace Calculator.Enumumerations
 {
-	enum OpType { ADD = 1, SUB, MULT, DIV, GOTO, QUIT }
+	public enum OpType { ADD = 1, SUB, MULT, DIV, GOTO, QUIT }
 }

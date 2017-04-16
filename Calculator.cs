@@ -1,72 +1,58 @@
 ﻿using System;
-using System.Text.RegularExpressions;
 
 namespace Calculator
 {
-	enum OpType { ADD, SUB, MULT, DIV, GOTO, QUIT }
-
-	struct Op
-	{
-		public OpType type;
-		public int entryId;
-
-		public Op(OpType type, int entryId)
-		{
-			this.type = type;
-			this.entryId = entryId;
-		}
-
-		public static bool TryParse(string s, out Op? result)
-		{
-			Match m = Regex.Match(s, @"^(?:(\+)|(-)|(\*)|(/)|(#[1-9][0-9]*)|(q))$");
-			if (!m.Success)
-			{
-				result = null;
-				return false;
-			}
-
-			int successGroupIndex = 0;
-			for (int i = 1; i <= 6; i++)
-				if (m.Groups[i + 1].Success)
-				{
-					successGroupIndex = i;
-					break;
-				}
-
-			result = new Op((OpType)successGroupIndex, successGroupIndex == 4 ? int.Parse(s.Substring(1)) : 0);
-			return true;
-		}
-	}
-
 	public class Calculator
 	{
-		CalcCore cc;
+		ICalcCore _cc;
 
+		void _executeCommand(Op op)
+		{
+			switch (op.type)
+			{
+				case OpType.ADD:
+					_cc.add(CalcUI.operandPrompt());
+					break;
+				case OpType.SUB:
+					_cc.substract(CalcUI.operandPrompt());
+					break;
+				case OpType.MULT:
+					_cc.mult(CalcUI.operandPrompt());
+					break;
+				case OpType.DIV:
+					_cc.div(CalcUI.operandPrompt());
+					break;
+				case OpType.GOTO:
+					if (!op.entryID.HasValue)
+						throw new Exception("EntryID in GOTO command is null for some reason");
+					_cc.goToEntry(op.entryID.Value);
+					break;
+				default:
+					throw new ProgammShoudNotReachThisCodeError("_executeCommand switch default clause");
+			}
+		}
+	
 		public void start()
 		{
-			CalcUI.usage();
+			CalcUI.printUsage();
 
-			cc = new CalcCore(CalcUI.operandPrompt());
-			CalcUI.showEntry(cc.lastEntry);
+			_cc = new CalcCore(CalcUI.operandPrompt());
+			CalcUI.showEntry(_cc.lastEntry);
 
 			Op op;
 			while ((op = CalcUI.opPrompt()).type != OpType.QUIT)
 			{
 				try
 				{
-					if (op.type == OpType.GOTO)
-						cc.goToEntry(op.entryId);
-
-					else if (op.type != OpType.QUIT)
-						cc.performMathOp((CalcMathOp)op.type, CalcUI.operandPrompt());
+					_executeCommand(op);
 				}
 				catch(CalcCoreError e)
 				{
 					Console.WriteLine(e.Message);
 				}
 				
-				CalcUI.showEntry(cc.lastEntry);
-			} 
+				CalcUI.showEntry(_cc.lastEntry);
+			}
 		}
 	}
 }

@@ -3,7 +3,7 @@ namespace Calculator
 {
 	static class CalcUI
 	{
-		public static void usage()
+		public static void printUsage()
 		{
 			Console.WriteLine("Usage:\n" +
 			                  "\twhen first symbol on line is '>' — enter operand (real number)\n" +
@@ -40,14 +40,14 @@ namespace Calculator
 			{
 				Console.Write("@: ");
 				s = Console.ReadLine();
-				if (!(isOp = Op.TryParse(s, out result)))
+				if (!(isOp = CalcParser.TryParse(s, out result)))
 					Console.WriteLine("Invalid command, try again");
 			} while (!isOp);
 
 			return result.Value;
 		}
 
-		public static void showEntry(Entry entry)
+		public static void showEntry(HistoryEntry entry)
 		{
 			Console.WriteLine("[#{0}] = {1}", entry.id, entry.value);
 		}

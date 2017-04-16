@@ -26,9 +26,9 @@ namespace Calculator
 			: base("No operand found to perform operation.\n" + msg) { }
 	}
 
-	class UnknownOperationError : CalcCoreError
+	class ProgammShoudNotReachThisCodeError : Exception
 	{
-		public UnknownOperationError(string msg = "")
-			: base("Calculator's core got an unknown to it operation.\n" + msg) { }
+		public ProgammShoudNotReachThisCodeError(string msg = "")
+			: base("Programm has reached the point it shoudn't\n" + msg) { }
 	}
 }

@@ -19,7 +19,7 @@ namespace Calculator.CalcUI
 	{
 		public static bool TryParse(string s, out Op? result)
 		{
-			Match m = Regex.Match(s, @"^(?:(\+)|(-)|(\*)|(/)|(#[1-9][0-9]*)|(w:[\w]+)|(r:[\w]+)|(q))$");
+			Match m = Regex.Match(s, @"^(?:(\+)|(-)|(\*)|(/)|(#[1-9][0-9]*)|(w:.+)|(r:.+)|(q))$");
 			if (!m.Success)
 			{
 				result = null;

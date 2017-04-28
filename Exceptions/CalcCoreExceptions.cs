@@ -8,6 +8,12 @@ namespace Calculator
 			: base(msg) { }
 	}
 
+	class InitialStateNotSet : Exception
+	{
+		public InitialStateNotSet(string msg = "")
+			: base("Initial state of calculatores core not set") { }
+	}
+
 	class ZeroDivisionError : CalcCoreError
 	{
 		public ZeroDivisionError(string msg = "")

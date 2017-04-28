@@ -36,7 +36,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CalcCore\CalcCore.cs" />
     <Compile Include="Calculator.cs" />
-    <Compile Include="Exceptions\Exceptions.cs" />
     <Compile Include="Interfaces\ICalcCore.cs" />
     <Compile Include="Interfaces\ICalcHistory.cs" />
     <Compile Include="Enums\OpType.cs" />
@@ -44,10 +43,15 @@
     <Compile Include="CalcCore\CalcHistoryEntry.cs" />
     <Compile Include="CalcUI\UI.cs" />
     <Compile Include="CalcUI\CalcParser.cs" />
+    <Compile Include="ICalcData.cs" />
+    <Compile Include="CalcData\CalcData.cs" />
+    <Compile Include="Exceptions\CalcDataExceptions.cs" />
+    <Compile Include="Exceptions\CalcCoreExceptions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Enums\" />
     <Folder Include="CalcUI\" />
+    <Folder Include="CalcData\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

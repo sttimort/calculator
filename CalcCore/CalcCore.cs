@@ -1,4 +1,5 @@
-﻿using Calculator.Interfaces;
+﻿using System.Collections.Generic;
+using Calculator.Interfaces;
 using Calculator.Enumumerations;
 
 namespace Calculator.CalcCore
@@ -7,11 +8,18 @@ namespace Calculator.CalcCore
 	{
 		ICalcHistory _history;
 		public CalcHistoryEntry lastEntry => _history.Last;
+		public List<KeyValuePair<OpType, double>> HistoryKeyValueList => _history.GetKeyValueList();
 
 		public Core(double firstValue)
 		{
 			_history = new CalcHistory();
-			_history.Add(OpType.ADD, firstValue, firstValue);
+			init(firstValue);
+		}
+
+		public void init(double operand)
+		{
+			_history.Clear();
+			_history.Add(OpType.INIT, operand, operand);
 		}
 
 		public void add(double operand)
